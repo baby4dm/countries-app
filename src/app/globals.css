@@ -1,26 +1,104 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+@theme {
+  /* Fonts */
+  --font-sans: var(--font-nunito), sans-serif;
+
+  /* Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Grey */
+  --color-grey-950: #111517;
+  --color-grey-400: #808080;
+  --color-grey-350: #979797;
+  --color-grey-300: #b2b2b2;
+  --color-grey-250: #c4c4c4;
+  --color-grey-50: #fcfcfc;
+
+  /* Blue */
+  --color-blue-950: #202c36;
+  --color-blue-900: #2b3844;
+
+  /* Spacing */
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+  --spacing-700: 56px;
+  --spacing-800: 64px;
+  --spacing-900: 72px;
+  --spacing-1000: 80px;
+}
+
+/* Typography Presets */
+@utility text-preset-1 {
+  font-size: 32px;
+  line-height: 44px; /* 137.5% */
+  font-weight: 800; /* ExtraBold */
+}
+
+@utility text-preset-2 {
+  font-size: 24px;
+  line-height: 33px; /* 137.5% */
+  font-weight: 800; /* ExtraBold */
+}
+
+@utility text-preset-3 {
+  font-size: 18px;
+  line-height: 26px; /* 145% */
+  font-weight: 800; /* ExtraBold */
+}
+
+@utility text-preset-4-semibold {
+  font-size: 16px;
+  line-height: 32px; /* 200% */
+  font-weight: 600; /* SemiBold */
+}
+
+@utility text-preset-4-light {
+  font-size: 16px;
+  line-height: 32px; /* 200% */
+  font-weight: 300; /* Light */
+}
+
+@utility text-preset-5-regular {
+  font-size: 14px;
+  line-height: 20px; /* 145% */
+  font-weight: 400; /* Regular */
+}
+
+@utility text-preset-5-light {
+  font-size: 14px;
+  line-height: 31px; /* 225% */
+  font-weight: 300; /* Light */
+}
+
+@utility text-preset-6-semibold {
+  font-size: 12px;
+  line-height: 16px; /* 135% */
+  font-weight: 600; /* SemiBold */
+}
+
+@utility text-preset-6-regular {
+  font-size: 12px;
+  line-height: 16px; /* 135% */
+  font-weight: 400; /* Regular */
+}
+
+@utility text-preset-6-light {
+  font-size: 12px;
+  line-height: 16px; /* 135% */
+  font-weight: 300; /* Light */
 }
