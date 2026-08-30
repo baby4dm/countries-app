@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+:root {
+  --bg-main: var(--color-grey-50);
+  --bg-element: var(--color-white);
+  --text-main: var(--color-grey-950);
+}
+
+[data-theme="dark"] {
+  --bg-main: var(--color-blue-950);
+  --bg-element: var(--color-blue-900);
+  --text-main: var(--color-white);
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-main);
