@@ -9,6 +9,17 @@ const nunitoSans = Nunito_Sans({
   variable: "--font-nunito",
 });
 
+export const metadata = {
+  title: {
+    default: "Where in the world?",
+    template: "%s | Where in the world?",
+  },
+  description: "REST Countries API app with color theme switcher",
+  icons: {
+    icon: "/icon.png",
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html

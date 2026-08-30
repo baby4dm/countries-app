@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function CountryCard({ country }) {
   if (!country) return null;
   return (
-    <li className="w-full h-84 max-w-66 rounded-md overflow-hidden shadow-md mx-auto bg-(--bg-element) cursor-pointer">
+    <li className="w-full h-84 max-w-66 rounded-md overflow-hidden shadow-md mx-auto bg-(--bg-element) transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer">
       <Link
         className="flex flex-col gap-4"
         href={`country/${country.alpha3Code}`}

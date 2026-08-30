@@ -14,12 +14,12 @@ export default function RegionFilter({ selectedRegion, onSelectRegion }) {
   return (
     <div className="text-preset-6-regular h-12 w-50 relative md:text-preset-5-regular">
       <div
-        className=" bg-(--bg-element) rounded-md w-full shadow-md flex justify-between px-6 py-4 items-center cursor-pointer"
+        className=" bg-(--bg-element) rounded-md w-full shadow-md flex justify-between px-6 py-4 items-center cursor-pointer transition-all duration-300 ease-in-out hover:scale-105"
         onClick={() => {
           setIsOpen(!isOpen);
         }}
       >
-        <span className="">{selectedRegion || "Filter by Region"}</span>
+        <span>{selectedRegion || "Filter by Region"}</span>
         {selectedRegion && (
           <span onClick={(e) => handleClear(e)}>
             <svg
@@ -62,7 +62,7 @@ export default function RegionFilter({ selectedRegion, onSelectRegion }) {
                 onSelectRegion(el);
                 setIsOpen(false);
               }}
-              className="cursor-pointer"
+              className="transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer"
               key={el}
             >
               {el}

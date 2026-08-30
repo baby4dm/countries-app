@@ -23,7 +23,7 @@ export default function Header() {
       </h1>
       {isMounted && (
         <button
-          className="text-preset-6-semibold flex items-center gap-2 cursor-pointer lg:text-preset-4-semibold"
+          className="text-preset-6-semibold flex items-center gap-2 cursor-pointer lg:text-preset-4-semibold transition-all duration-300 ease-in-out hover:scale-105"
           onClick={() => setTheme(isDark ? "light" : "dark")}
         >
           <span> {isDark ? "☀️" : "🌙"}</span>
