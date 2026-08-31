@@ -33,8 +33,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./public/design/desktop-preview.jpg)
-_Add your own screenshot here by placing an image in the `public` folder_
+![](./public/screenshot.png)
 
 ### Links
 
