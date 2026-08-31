@@ -111,7 +111,7 @@ export default async function CountryDetailPage({ params }) {
                 return (
                   <Link
                     key={borderCode}
-                    href={`/country/${borderCountry.alpha3Code}`}
+                    href={`/country/${borderCountry.alpha3Code.toLowerCase()}`}
                     className="text-preset-6-light h-7 flex-1 bg-(--bg-element) px-4 py-1.5 rounded-sm shadow-md 
                     flex items-center justify-center cursor-pointer whitespace-nowrap transition-all duration-300 ease-in-out hover:scale-105"
                   >
