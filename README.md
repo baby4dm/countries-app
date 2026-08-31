@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Mentor - REST Countries API with color theme switcher solution
 
-## Getting Started
+This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5c13e26573f9101d2c60143a).
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### The challenge
 
-## Learn More
+Users should be able to:
 
-To learn more about Next.js, take a look at the following resources:
+- See all countries from the API / JSON file on the homepage
+- Search for a country using an `input` field
+- Filter countries by region
+- Click on a country to see more detailed information on a separate page
+- Click through to the border countries on the detail page
+- Toggle the color scheme between light and dark mode
+- View the optimal layout for the interface depending on their device's screen size
+- Navigate the app fully using keyboard & screen readers (A11y friendly)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Screenshot
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+![](./public/design/desktop-preview.jpg)
+_Add your own screenshot here by placing an image in the `public` folder_
 
-## Deploy on Vercel
+### Links
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Solution URL:** [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/countries-app-SEqwSfHESB)
+- **Live Site URL:** [https://baby4dm.github.io/countries-app/](https://baby4dm.github.io/countries-app/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## My process
+
+### Built with
+
+- **Framework:** [Next.js 15+](https://nextjs.org/) (App Router)
+- **Library:** [React](https://react.dev/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Deployment:** GitHub Pages (Static Export with `output: 'export'`)
+- **Icons & Accessibility:** ARIA roles, semantic HTML5, SVG icons
+
+---
+
+### What I learned
+
+1. **Static Exporting & Dynamic Routing in Next.js:**
+   Configuring Next.js for GitHub Pages required mastering `generateStaticParams()` to pre-render dynamic routes (`/country/[code]`) at build time:
+
+   ```jsx
+   export async function generateStaticParams() {
+     return data.map((country) => ({
+       code: country.alpha3Code.toLowerCase(),
+     }));
+   }
+   ```

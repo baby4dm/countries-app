@@ -55,7 +55,7 @@ export default async function CountryDetailPage({ params }) {
         <img
           className="w-full rounded-md shadow-md lg:max-w-140 lg:flex-1"
           src={country.flags.png}
-          alt={country.name}
+          alt={"Flag of " + country.name}
         />
         <div className="flex flex-col gap-4 w-full md:gap-6 lg:flex-1">
           <h1 className="text-preset-2 md:text-preset-1">{country.name}</h1>
@@ -89,11 +89,13 @@ export default async function CountryDetailPage({ params }) {
               </p>
               <p>
                 <span className="font-semibold">Currencies: </span>
-                {country.currencies?.map((curr) => curr.name).join(", ")}
+                {country.currencies?.map((curr) => curr.name).join(", ") ||
+                  "N/A"}
               </p>
               <p>
                 <span className="font-semibold">Languages: </span>
-                {country.languages?.map((lang) => lang.name).join(", ")}
+                {country.languages?.map((lang) => lang.name).join(", ") ||
+                  "N/A"}
               </p>
             </div>
           </div>
@@ -107,11 +109,13 @@ export default async function CountryDetailPage({ params }) {
                   (item) =>
                     item.alpha3Code.toLowerCase() === borderCode.toLowerCase(),
                 );
-
+                const targetCode = borderCountry
+                  ? borderCountry.alpha3Code.toLowerCase()
+                  : borderCode.toLowerCase();
                 return (
                   <Link
                     key={borderCode}
-                    href={`/country/${borderCountry.alpha3Code.toLowerCase()}`}
+                    href={`/country/${targetCode}`}
                     className="text-preset-6-light h-7 flex-1 bg-(--bg-element) px-4 py-1.5 rounded-sm shadow-md 
                     flex items-center justify-center cursor-pointer whitespace-nowrap transition-all duration-300 ease-in-out hover:scale-105"
                   >

@@ -13,7 +13,7 @@ export default function CountryCard({ country }) {
           <img
             className="h-40 w-full object-cover"
             src={country.flags.svg}
-            alt={country.name}
+            alt={"Flag of " + country.name}
           />
         }
         <div className="pl-6 flex flex-col gap-4">

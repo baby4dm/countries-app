@@ -4,8 +4,12 @@ export default function SearchInput({ value, onChange }) {
   return (
     <div
       className="group flex w-full  items-center h-12 rounded-md shadow-md px-8 gap-6
-     md:max-w-120  bg-(--bg-element) transition-all duration-300 ease-in-out hover:scale-105 focus-within:scale-105"
+     md:max-w-120  bg-(--bg-element) transition-all duration-300 ease-in-out hover:scale-105 focus-within:scale-105
+     focus-within:ring-2 focus-within:ring-black focus-within:ring-offset-2"
     >
+      <label htmlFor="country-search" className="sr-only">
+        Search for a country
+      </label>
       <svg
         className="w-4 h-4 stroke-grey-250 md:w-5 md:h-5"
         viewBox="0 0 24 24"
@@ -19,6 +23,7 @@ export default function SearchInput({ value, onChange }) {
         />
       </svg>
       <input
+        id="country-search"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className="w-full text-preset-6-regular placeholder:text-preset-6-regular
