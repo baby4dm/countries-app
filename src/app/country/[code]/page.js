@@ -63,37 +63,37 @@ export default async function CountryDetailPage({ params }) {
             <div>
               <p>
                 <span className="font-semibold">Native Name: </span>
-                {country.nativeName}
+                {country.nativeName || "N/A"}
               </p>
               <p>
                 <span className="font-semibold">Population: </span>
-                {country.population}
+                {country.population || "N/A"}
               </p>
               <p>
                 <span className="font-semibold">Region: </span>
-                {country.region}
+                {country.region || "N/A"}
               </p>
               <p>
                 <span className="font-semibold">Sub Region: </span>
-                {country.subregion}
+                {country.subregion || "N/A"}
               </p>
               <p>
                 <span className="font-semibold">Capital: </span>
-                {country.capital}
+                {country.capital || "N/A"}
               </p>
             </div>
             <div>
               <p>
                 <span className="font-semibold">Top Level Domain: </span>
-                {country.topLevelDomain}
+                {country.topLevelDomain || "N/A"}
               </p>
               <p>
                 <span className="font-semibold">Currencies: </span>
-                {country.currencies.map((curr) => curr.name).join(", ")}
+                {country.currencies?.map((curr) => curr.name).join(", ")}
               </p>
               <p>
                 <span className="font-semibold">Languages: </span>
-                {country.languages.map((lang) => lang.name).join(", ")}
+                {country.languages?.map((lang) => lang.name).join(", ")}
               </p>
             </div>
           </div>
