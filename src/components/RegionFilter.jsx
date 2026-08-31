@@ -67,17 +67,14 @@ export default function RegionFilter({ selectedRegion, onSelectRegion }) {
       </div>
 
       {isOpen && (
-        <ul
-          role="listbox"
-          aria-label="Regions"
-          className="absolute left-0 right-0 mt-2 z-10 flex flex-col gap-2 pl-6 py-4 shadow-md rounded-md bg-(--bg-element)"
-        >
+        <ul className="absolute left-0 right-0 mt-2 z-10 flex flex-col gap-2 pl-6 py-4 shadow-md rounded-md bg-(--bg-element)">
           {REGIONS.map((el) => {
             const isSelected = el === selectedRegion;
             return (
-              <li role="option" aria-selected={isSelected} key={el}>
+              <li key={el}>
                 <button
                   type="button"
+                  aria-pressed={isSelected}
                   onClick={() => {
                     onSelectRegion(el);
                     setIsOpen(false);
