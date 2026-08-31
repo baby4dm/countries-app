@@ -16,7 +16,7 @@ export const metadata = {
   },
   description: "REST Countries API app with color theme switcher",
   icons: {
-    icon: "/icon.png",
+    icon: "/countries-app/icon.png",
   },
 };
 
